@@ -35,17 +35,20 @@ describe(Word) do
 
   describe('.find') do
     it('finds a word based on its assigned id') do
-      test_word = Word.new("computer")
+      test_word = Word.new("windows")
       test_word.save()
+      test_word2 = Word.new("apple")
+      test_word2.save()
       expect(Word.find(1)).to(eq(test_word))
-
+      expect(Word.find(2)).to(eq(test_word2))
     end
   end
 
-
-  # describe('#word_list') do
-  #   it('initially returns an empty array of words in dictionary') do
-  #   end
-  # end
+  describe('#definition_list') do
+    it('initially returns an empty array of words in dictionary') do
+      test_word = Word.new("coffee")
+      expect(test_word.definition_list()).to(eq([]))
+    end
+  end
 
 end
