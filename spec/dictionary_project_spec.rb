@@ -66,4 +66,23 @@ describe(Definition) do
     end
   end
 
+  describe('#save') do
+    it('will save a definition to the array') do
+      test_definition = Definition.new("a small animal")
+      test_definition.save()
+      expect(Definition.all()).to(eq([test_definition]))
+    end
+  end
+
+describe('.clear') do
+    it('will clear out the definitions array') do
+      test_definition = Definition.new("a writing utensil")
+      test_definition.save()
+      Definition.clear()
+      expect(Definition.all()).to(eq([]))
+
+    end
+  end
+
+
 end
