@@ -56,7 +56,7 @@ describe(Word) do
   end
 
   describe('#word') do
-    it('returns the word of an array entry') do
+    it('returns a word passed into an object') do
       test_word = Word.new("pencil")
       expect(test_word.word()).to(eq("pencil"))
     end
@@ -77,7 +77,7 @@ describe(Definition) do
   before() do
     Definition.clear()
   end
-  
+
   describe('.all') do
     it('will return an empty array at first') do
       expect(Definition.all()).to(eq([]))
@@ -116,6 +116,13 @@ describe(Definition) do
       test_definition2.save()
       expect(Definition.find(1)).to(eq(test_definition))
       expect(Definition.find(2)).to(eq(test_definition2))
+    end
+  end
+
+  describe('#definition') do
+    it('returns the definition given to a word') do
+      test_definition = Definition.new("an interpretive dance")
+      expect(test_definition.definition()).to(eq("an interpretive dance"))
     end
   end
 

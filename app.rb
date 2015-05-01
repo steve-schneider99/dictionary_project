@@ -29,6 +29,6 @@ post('/new_definition') do
 end
 
 get('/words/:id') do
-  @word = Word.find(params.fetch('id').to_i())
+  @word = Word.find(params.fetch('id'))
   erb(:definition)
 end
