@@ -27,7 +27,7 @@ describe(Word) do
   end
 
   describe('#id') do
-    it('returns a definition by its id number') do
+    it('returns a word by its id number') do
       test_word = Word.new("house")
       expect(test_word.id()).to(eq(1))
     end
@@ -74,12 +74,30 @@ describe(Definition) do
     end
   end
 
-describe('.clear') do
+  describe('.clear') do
     it('will clear out the definitions array') do
       test_definition = Definition.new("a writing utensil")
       test_definition.save()
       Definition.clear()
       expect(Definition.all()).to(eq([]))
+    end
+  end
+
+  describe('#id') do
+    it('returns a definition by its id number') do
+      test_definition = Definition.new("a place families live")
+      expect(test_definition.id()).to(eq(1))
+    end
+  end
+
+  describe('.find') do
+    it('finds a definiiton based on its assigned id') do
+      test_definition = Definition.new("things we look out of")
+      test_definition.save()
+      test_definition2 = Definition.new("a round red fruit")
+      test_definition2.save()
+      expect(Definition.find(1)).to(eq(test_definition))
+      expect(Definition.find(2)).to(eq(test_definition2))
 
     end
   end
