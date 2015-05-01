@@ -1,9 +1,10 @@
 <h1>The following are definitions for the word: <%= @word.word() %></h1>
 
-
-
-
-
+<ul>
+  <% @definitions.each() do |definition| %>
+    <li><%= definition %></li>
+  <% end %>
+</ul>
 
 <h2>Add a definition to this word with the form below:</h2>
 

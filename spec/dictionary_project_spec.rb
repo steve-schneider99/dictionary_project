@@ -60,7 +60,10 @@ describe(Word) do
 end
 
 describe(Definition) do
-  describe()
-end
+  describe('.all') do
+    it('will return an empty array at first') do
+      expect(Definition.all()).to(eq([]))
+    end
+  end
 
 end

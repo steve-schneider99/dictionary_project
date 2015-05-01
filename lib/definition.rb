@@ -1,9 +1,13 @@
 class Definition
-@@definition = []
+@@definitions = []
 
   define_method(:initialize) do |definition|
     @definition = definition
-    @def_id = @@definition.include().+(1)
+    @def_id = @@definitions.include().+(1)
+  end
+
+  define_singleton_method(:all) do
+    @@definitions
   end
 
 
