@@ -3,6 +3,10 @@ require('word')
 require('definition')
 
 describe(Word) do
+  before() do
+    Word.clear()
+  end
+
   describe('.all') do
     it('is empty at first') do
       expect(Word.all()).to(eq([]))
@@ -70,6 +74,10 @@ describe(Word) do
 end
 
 describe(Definition) do
+  before() do
+    Definition.clear()
+  end
+  
   describe('.all') do
     it('will return an empty array at first') do
       expect(Definition.all()).to(eq([]))

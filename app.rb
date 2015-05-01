@@ -30,6 +30,5 @@ end
 
 get('/words/:id') do
   @word = Word.find(params.fetch('id').to_i())
-  @definitions = []
   erb(:definition)
 end
