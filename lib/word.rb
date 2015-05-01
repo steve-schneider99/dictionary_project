@@ -3,7 +3,7 @@ class Word
 
   define_method(:initialize) do |word|
     @word = word
-    @id = @@words.length().+(1)
+    @word_id = @@words.length().+(1)
   end
 
   define_singleton_method(:all) do
@@ -16,10 +16,22 @@ class Word
 
   define_singleton_method(:clear) do
     @@words = []
+  end
 
   define_method(:id) do
-    @id
+    @word_id
   end
 
+  define_singleton_method(:find) do |identification|
+    this_word = nil
+    @@words.each() do |word|
+      if word.id().eql?(identification.to_i())
+        this_word = word
+      end
+    end
+  this_word
   end
+
+
+
 end

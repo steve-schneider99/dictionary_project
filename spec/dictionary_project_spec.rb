@@ -30,10 +30,17 @@ describe(Word) do
     it('returns a definition by its id number') do
       test_word = Word.new("house")
       expect(test_word.id()).to(eq(1))
-
     end
   end
 
+  describe('.find') do
+    it('finds a word based on its assigned id') do
+      test_word = Word.new("computer")
+      test_word.save()
+      expect(Word.find(1)).to(eq(test_word))
+
+    end
+  end
 
 
   # describe('#word_list') do
