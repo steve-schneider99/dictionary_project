@@ -4,6 +4,7 @@ class Definition
   define_method(:initialize) do |definition|
     @definition = definition
     @def_id = @@definitions.length().+(1)
+    @definitions = []
   end
 
   define_singleton_method(:all) do

@@ -1,7 +1,9 @@
 <h1>The following are definitions for the word: <%= @word.word() %></h1>
 
+
+
 <ul>
-  <% @definitions.each() do |definition| %>
+  <% @word.definition_list().each() do |definition| %>
     <li><%= definition %></li>
   <% end %>
 </ul>
@@ -16,3 +18,5 @@
 
   <button type="submit">Add Definition</button>
 </form>
+
+<a href="/">Return to Dictionary</a>

@@ -57,6 +57,16 @@ describe(Word) do
       expect(test_word.word()).to(eq("pencil"))
     end
   end
+
+  describe('#add_definition') do
+    it('adds a definition to a word') do
+      test_word = Word.new("chicken")
+      test_definition = Definition.new("a bird that lays eggs")
+      test_word.add_definition(test_definition)
+      expect(test_word.definition_list()).to(eq([test_definition]))
+    end
+  end
+
 end
 
 describe(Definition) do
@@ -91,16 +101,14 @@ describe(Definition) do
   end
 
   describe('.find') do
-    it('finds a definiiton based on its assigned id') do
+    it('finds a definition based on its assigned id') do
       test_definition = Definition.new("things we look out of")
       test_definition.save()
       test_definition2 = Definition.new("a round red fruit")
       test_definition2.save()
       expect(Definition.find(1)).to(eq(test_definition))
       expect(Definition.find(2)).to(eq(test_definition2))
-
     end
   end
-
 
 end
