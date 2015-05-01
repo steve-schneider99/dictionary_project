@@ -57,7 +57,10 @@ describe(Word) do
       expect(test_word.word()).to(eq("pencil"))
     end
   end
+end
 
-
+describe(Definition) do
+  describe()
+end
 
 end
