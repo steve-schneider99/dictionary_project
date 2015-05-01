@@ -9,11 +9,8 @@
 
 <a href="/words/new">Add New Word</a>
 
-<form action="/definitions" method="post">
-  <input id="word_id" name="word_id" type="hidden" value="<%= @word.id() %>">
-
+<form action="/new_word" method="post">
   <label for="new_word">Word to be added:</label>
   <input id="new_word" name="new_word" type="text">
-
   <button type="submit">Add Word To Dictionary</button>
 </form>

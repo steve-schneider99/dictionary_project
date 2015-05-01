@@ -9,9 +9,20 @@ get('/') do
   erb(:index)
 end
 
-post('/definitions') do
+post('/new_word') do
   word = params.fetch('new_word')
   Word.new(word).save()
   @word = word
-  erb(:definition)
+  erb(:success_word)
+end
+
+
+
+post('/new_definition') do
+  definition = params.fetch("definition")
+  @definition = Definition.new(definition)
+  @definition.save()
+  @word = Word.find(params.fetch('word_id').to_i())
+  @word.add_definition(@definition)
+  erb(:success_definition)
 end
