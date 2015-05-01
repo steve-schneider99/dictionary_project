@@ -26,5 +26,19 @@ describe(Word) do
     end
   end
 
+  describe('#id') do
+    it('returns a definition by its id number') do
+      test_word = Word.new("house")
+      expect(test_word.id()).to(eq(1))
+
+    end
+  end
+
+
+
+  # describe('#word_list') do
+  #   it('initially returns an empty array of words in dictionary') do
+  #   end
+  # end
 
 end
