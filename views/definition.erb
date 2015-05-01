@@ -1,1 +1,17 @@
-The following is the definition for <%= @word.name() %>
+<h1>The following are definitions for the word: <%= @word.word() %></h1>
+
+
+
+
+
+
+<h2>Add a definition to this word with the form below:</h2>
+
+<form action="/new_definition" method="post">
+  <input id="word_id" name="word_id" type="hidden" value="<%= @word.id() %>">
+
+  <label for="definition">Enter a definition here:</label>
+  <input id="definition" name="definition" type="text">
+
+  <button type="submit">Add Definition</button>
+</form>

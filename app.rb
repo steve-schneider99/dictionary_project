@@ -19,7 +19,7 @@ end
 
 
 post('/new_definition') do
-  definition = params.fetch("definition")
+  definition = params.fetch('definition')
   @definition = Definition.new(definition)
   @definition.save()
   @word = Word.find(params.fetch('word_id').to_i())
