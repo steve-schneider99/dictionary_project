@@ -30,7 +30,7 @@ class Word
         this_word = word
       end
     end
-  this_word
+    this_word
   end
 
   define_method(:definition_list) do
@@ -44,5 +44,4 @@ class Word
   define_method(:add_definition) do |definition|
     @definitions.push(definition)
   end
-
 end

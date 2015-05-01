@@ -30,11 +30,10 @@ class Definition
         this_definition = definition
       end
     end
-  this_definition
+    this_definition
   end
 
   define_method(:definition) do
     @definition
   end
-
 end
