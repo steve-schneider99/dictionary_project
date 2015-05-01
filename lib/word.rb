@@ -37,4 +37,9 @@ class Word
     @definitions
   end
 
+  define_method(:word) do
+    @word
+  end
+
+
 end

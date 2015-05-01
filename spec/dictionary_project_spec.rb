@@ -51,4 +51,13 @@ describe(Word) do
     end
   end
 
+  describe('#word') do
+    it('returns the word of an array entry') do
+      test_word = Word.new("pencil")
+      expect(test_word.word()).to(eq("pencil"))
+    end
+  end
+
+
+
 end

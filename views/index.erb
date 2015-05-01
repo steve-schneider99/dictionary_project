@@ -1,0 +1,8 @@
+<h1>Dictionary Program</h1>
+<ol type="I">
+  <% @@words.each() do |word| %>
+    <li><a href="/words/<%= word.id() %>"><%= word.name() %></a></li>
+  <% end %>
+</ol>
+
+<a href="/words/new">Add New Word</a>
